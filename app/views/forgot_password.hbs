@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    {{> head }}
+
+    <!-- Body -->
+    <body>
+
+
+        <!--========== HEADER ==========-->
+        <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
+            <!-- Navbar -->
+            <nav class="s-header-v2__navbar">
+                <div class="container g-display-table--lg">
+                    <!-- Navbar Row -->
+                    <div class="s-header-v2__navbar-row">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="s-header-v2__navbar-col">
+                            <button type="button" class="collapsed s-header-v2__toggle" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                                <span class="s-header-v2__toggle-icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col-width--180">
+                            <!-- Logo -->
+                            <div class="s-header-v2__logo">
+                                <a href="/" class="s-header-v2__logo-link">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--default" src="static/img/up.png" alt="StartUp Conclave" height="70">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--shrink" src="static/img/up.png" alt="StartUp Conclave" height="60">
+                                </a>
+                            </div>
+                            <!-- End Logo -->
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right">
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
+                                <ul class="s-header-v2__nav">
+                                    <li class="s-header-v2__nav-item"><a href="/" class="s-header-v2__nav-link">Home</a></li>
+                                    <li class="s-header-v2__nav-item"><a href="/login" class="s-header-v2__nav-link">Login</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Nav Menu -->
+                        </div>
+                    </div>
+                    <!-- End Navbar Row -->
+                </div>
+            </nav>
+            <!-- End Navbar -->
+        </header>
+        <!--========== PROMO BLOCK ==========-->
+        <div id="faq" class="s-promo-block-v1 g-fullheight--md g-bg-color--primary-ltr">
+            <div class="container g-ver-center--md g-padding-y-100--xs">
+                <div class="row g-hor-centered-row--md g-margin-t-30--xs g-margin-t-20--sm">
+                    <div class="col-lg-8 col-sm-6 g-hor-centered-row__col">
+                        <div class="wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
+                            <div class="g-text-center--xs g-margin-b-40--xs">
+                                {{#if stage3}}
+                                    <h2 class="g-font-size-30--lg g-font-size-50--md g-color--white">Reset Password</h2>
+                                    <p class="g-font-size-20--xs g-color--white">Please enter your new password</p>
+                                    <p class="g-font-size-20--xs g-color--red">{{message}}</p>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                                            <form class="input-group" method="post" action="/forgot-done">
+                                                <input type="password" class="form-control s-form-v5__input  s-btn--white-bg g-radius--left-50" style="border:1px #fff solid !important;" name="pass" placeholder="Password">
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="s-btn s-btn-icon--md s-btn-icon--white-brd s-btn--white-brd g-radius--right-50"><i class="ti-arrow-right"></i></button>
+                                                </span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                {{else if stage2}}
+                                    <h2 class="g-font-size-30--lg g-font-size-50--md g-color--white">Verify OTP</h2>
+                                    <p class="g-font-size-26--xs g-color--white">A One Time Password has been sent to <b>{{session.email}}</b></p>
+                                    <p class="g-font-size-20--xs g-color--white">Please enter the OTP below to verify your team email address. If you cannot see the email please check your spam folder.</p>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                                            <form class="input-group" method="post" action="/forgot-password">
+                                                <input type="number" class="form-control s-form-v5__input  s-btn--white-bg g-radius--left-50" style="border:1px #fff solid !important;" name="otp" placeholder="OTP">
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="s-btn s-btn-icon--md s-btn-icon--white-brd s-btn--white-brd g-radius--right-50"><i class="ti-arrow-right"></i></button>
+                                                </span>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                {{else}}
+                                    <h2 class="g-font-size-30--lg g-font-size-50--md g-color--white">Forgot Password?</h2>
+                                    <p id="error" class="g-font-size-26--xs g-color--white" style="display: none"></p>
+                                    <p id="error" class="g-font-size-26--xs g-color--red">{{message}}</p>
+
+                                    <p class="g-font-size-20--xs g-color--white">Kindly enter your team email address</p>
+                                    <div class="row">
+
+                                        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                                            <form class="input-group" method="post" action="">
+                                                <input id="e" type="email" class="form-control s-form-v5__input  s-btn--white-bg g-radius--left-50" style="border:1px #fff solid !important;" name="e" placeholder="Email">
+                                                <span class="input-group-btn">
+                                                    <button id="forgot" type="submit" class="s-btn s-btn-icon--md s-btn-icon--white-brd s-btn--white-brd g-radius--right-50"><i class="ti-arrow-right"></i></button>
+                                                </span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                {{/if}}
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== END PROMO BLOCK ==========-->
+
+
+
+
+
+
+        <!--========== FOOTER ==========-->
+        {{> footer}}
+
+        <!--========== END FOOTER ==========-->
+
+        {{> scripts}}
+        <!--========== END JAVASCRIPTS ==========-->
+
+    </body>
+    <!-- End Body -->
+</html>

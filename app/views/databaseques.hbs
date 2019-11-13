@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    {{> head }}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <style>
+        .hover:hover{
+            color: #bd2026;
+            cursor: pointer;
+        }
+        #loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    -webkit-transition: all .5s ease;
+    z-index: 1000;
+            display: none;
+}
+
+#loading.hide {
+    display: none;
+}
+#loading.show {
+    display: block;
+}
+
+#spinner {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    background-color: yellow;
+    -webkit-transition: all 1000s linear;
+    display: block;
+}
+
+#spinner.spin {
+    -webkit-transform: rotate(100000deg);
+    -webkit-transition-duration: 1s;
+    -webkit-transition-delay: now;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+        #spinner.hide {
+    display: none;
+}
+
+        #table_id_wrapper{
+            overflow: auto;
+        }
+    </style>
+    <!-- End Head -->
+
+    <!-- Body -->
+    <body>
+
+        <!--&lt;!&ndash;========== HEADER ==========&ndash;&gt;-->
+        <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
+            <!-- Navbar -->
+            <nav class="s-header-v2__navbar">
+                <div class="container g-display-table--lg">
+                    <!-- Navbar Row -->
+                    <div class="s-header-v2__navbar-row">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="s-header-v2__navbar-col">
+                            <button type="button" class="collapsed s-header-v2__toggle" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                                <span class="s-header-v2__toggle-icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col-width--180">
+                            <!-- Logo -->
+                            <div class="s-header-v2__logo">
+                                <a href="/" class="s-header-v2__logo-link">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--default" src="static/img/up.png" alt="StartUp Conclave" height="30">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--shrink" src="static/img/up.png" alt="StartUp Conclave" height="30">
+                                </a>
+                            </div>
+                            <!-- End Logo -->
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right">
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
+                                <ul class="s-header-v2__nav">
+                                    <li class="s-header-v2__nav-item"><a href="/" class="s-header-v2__nav-link">Home</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Nav Menu -->
+                        </div>
+                    </div>
+                    <!-- End Navbar Row -->
+                </div>
+            </nav>
+            <!-- End Navbar -->
+        </header>
+        <div id="my" style="position:absolute; width: 100%; z-index: 10; min-height: 10vh";>
+            <div id="loading">
+                        <div id="spinner"></div>
+            </div>
+        </div>
+
+        <!--========== END HEADER ==========-->
+
+
+        <!--========== PROMO BLOCK ==========-->
+        <!--<div class="g-bg-color--primary-ltr" style="padding: 150px 30px; background: #fff">-->
+        <div class="s-promo-block-v1  g-bg-color--primary-ltr" style="padding: 150px 30px; background: #fff">
+
+
+
+        <table id="table_id" class="display" style=" overflow-x: auto;">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Team Name</th>
+                        <th>Team Email</th>
+
+                        <th>College</th>
+                        <th>Questionnaire</th>
+                        <th>Change</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    {{# each teams}}
+
+                        <tr class="dbrow">
+                            <td>{{@index}}</td>
+                            <td>{{this.teamName}}</td>
+                            <td>{{this.teamEmail}}</td>
+                            <td>{{this.college}}</td>
+
+                            <td class="hover" onclick="getques('{{this.teamEmail}}', '{{this.teamName}}');">View</td>
+                            <td><select name="qual" id="selectbox" onchange="letQualify('{{this.teamEmail}}', this.value, 'sag{{@index}}');">
+                                <option value="#" default disabled selected>Select</option>
+                                <option value="0">Not Qualified</option>
+                                <option value="1">Qualified</option>
+                            </select></td>
+                            <td class="sag{{@index}}">{{# if this.isRthree}}
+                                <span style="color: forestgreen;">Qualified to 3rd Round</span>
+                                {{else}}
+                                <span style="color:red ">Not Qualified to 3rd Round</span>
+                            {{/if}}
+                            </td>
+
+                        </tr>
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+            </div>
+
+
+
+        <!--========== END PROMO BLOCK ==========-->
+
+        <!--========== FOOTER ==========-->
+        {{> footer}}
+        {{> scripts }}
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $('#table_id').DataTable();
+            } );
+
+        </script>
+
+
+        <script>
+
+            function letQualify(email, value, clas){
+
+                console.log(value);
+                var req = $.ajax({
+                    url : "/updateround",
+                    type: "POST",
+                    data : {email: email, value: value}
+                });
+
+                req.done(function(data){
+                    $('.' + clas).html(data);
+                });
+                req.fail(function(jqXHR, textStatus) {
+                        $('.' + clas).html("Change Again: "+textStatus);
+                });
+
+            }
+
+        </script>
+
+
+        <script>
+
+            function getques(email, name) {
+                	var req = $.ajax({
+                        url : "/getques",
+                        type: "POST",
+                        data : {email: email}
+                    });
+
+                    req.done(function (data) {
+
+                        // console.log(data);
+
+                        var html = '\n' +
+                                '<div class="g-container g-padding-y-80--xs g-padding-y-100--xs" id="Questionnaire" style="display: block; background: #000">\n' +
+                                '                <div id="close" style="color: #fff; text-align: center" onclick="rem();" style="text-align: center"><i class="ti-close"></i></div>\n' +
+                                '                <div class="g-text-center--xs g-margin-b-20--xs">\n' +
+                                '                    <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Questionnaire | '+name +'</h2>\n' +
+                                '                </div>\n' +
+                                '                \n' +
+                                '                <br>\n' +
+                                '                <div class="row g-padding-x-20--xs">\n' +
+                                '                        <div class="cbp-l-grid-faq js__grid-faq">\n' +
+                                '                            \n' +
+                                '                            <h4 class="s-faq-grid__title"><b>1. Description</b></h4><br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="description" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-30--xs">\n' +
+                                '                                                    Idea Name:<input type="text" class="form-control s-form-v6__input q1" placeholder="" value="'+data.description.q1+'">\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-50--xs">\n' +
+                                '                                                    Category:<input type="text" class="form-control s-form-v6__input q2" placeholder="" value="'+data.description.q2+'">\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Description of Idea<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">'+data.description.q3+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>2. Problem</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="problem" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-color--white-opacity">\n' +
+                                '                                                    <div class="g-margin-b-80--xs">\n' +
+                                '                                                        Problem being solved? (What current problem is your venture targeting?)<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.problem.q1+'</textarea>\n' +
+                                '                                                    </div>\n' +
+                                '                                                    <div class="g-margin-b-80--xs">\n' +
+                                '                                                        Why do you believe it\'s a major problem?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.problem.q2+'</textarea>\n' +
+                                '                                                    </div>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>3. Solution</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="solution" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                     Your Solution? (How your product/service can help in resolving the above problem.)<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.solution.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Product or Service description:<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.solution.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>4. Status</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            \n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="status" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Current Status of your venture (like idea stage, prototype, etc.):<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.status.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Mention if you have secured funding, incubation or enrolled in any (if any) of the accelerator program.<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.status.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>5. Target Market</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="targetmarket" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    What market will you target initially? (Be clear about who will utilize your product/services and how will they access it. This section should therefore give a sense about the size of the market and market research (e.g. In India, there are ___ number of car owners who will buy your service at Rs. ____ per year. This translates into a market potential of Rs. ____ per year).\n' +
+                                '                                                    <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.targetmarket.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                     Who is your most important customer and why?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.targetmarket.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    What is your vision regarding your addressable market? (Total market that you want to grab if all of them were to buy your product/ services (not that they will, but this is to give an indication of what size of the market is ))\n' +
+                                '                                                    <textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">'+data.targetmarket.q3+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>6. Competitors and Differentiation</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="competitors" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Who is your Direct Competitor?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.competitors.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Who is likely to be your Indirect Competitor and why?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.competitors.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Describe how you will differentiate your venture from your competitor in your market:<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">'+data.competitors.q3+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>7. Revenue Model</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="revenue" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    What is your revenue model and how will you make money from this business opportunity?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.revenue.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    What do you consider as the factors that may affect your revenue and cost?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.revenue.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    What are the growth opportunities in your venture?<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">'+data.revenue.q3+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>8. Social Touch</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="social" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Any substantial social and/or environmental benefits by your idea?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.social.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>9. Marketing Technique</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="marketing" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    What marketing techniques will you use to market your product?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.marketing.q1+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Why do you believe this will work?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.marketing.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            <h4 class="s-faq-grid__title"><b>10. Team</b></h4>\n' +
+                                '                                        <br>\n' +
+                                '                            <div class="g-color--white-opacity">\n' +
+                                '                                            <form id="qteam" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">\n' +
+                                '                                                <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Highlight what will each member of the team do in the venture and why he / she is best suited for that role:<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">'+data.team.q1 +'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                <div class="g-margin-b-80--xs">\n' +
+                                '                                                    Highlight the work experience and education background of all the team members:<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">'+data.team.q2+'</textarea>\n' +
+                                '                                                </div>\n' +
+                                '                                                \n' +
+                                '                                            </form>\n' +
+                                '                                        </div>\n' +
+                                '                            \n' +
+                                '                </div>\n' +
+                                '            </div>\n' +
+                                '</div>';
+
+
+                                $("#my").html(html);
+
+
+
+
+                    });
+
+                    req.fail(function(jqXHR, textStatus) {
+                        $("#my").html("Some Error Occured: "+textStatus);
+                    });
+
+
+
+                        function stopSpinner() {
+                            $('#loading').addClass('hide');
+                            $('#loading').one('webkitTransitionEnd', function() {
+                                $('#loading').hide();
+                            });
+                        }
+
+                        $(document).ajaxStop(function () {
+                            // $.active == 0
+                            stopSpinner();
+                            $('#loading').addClass('hide');
+                            $('#spinner').addClass('hide');
+                        });
+                        $(document).ajaxStart(function () {
+
+                            $('#loading').addClass('show');
+                             $('#spinner').addClass('spin');
+                         });
+
+                    return false;
+            }
+
+        </script>
+
+    <script type="text/javascript">
+
+          function rem(){
+            $("#Questionnaire").remove();
+
+          }
+        </script>
+    </body>
+    <!-- End Body -->
+</html>

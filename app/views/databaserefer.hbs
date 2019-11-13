@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    {{> head }}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <!-- End Head -->
+    <style>
+        #table_id_wrapper{
+            overflow: auto;
+        }
+    </style>
+
+    <!-- Body -->
+    <body>
+
+        <!--========== HEADER ==========-->
+        <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
+            <!-- Navbar -->
+            <nav class="s-header-v2__navbar">
+                <div class="container g-display-table--lg">
+                    <!-- Navbar Row -->
+                    <div class="s-header-v2__navbar-row">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="s-header-v2__navbar-col">
+                            <button type="button" class="collapsed s-header-v2__toggle" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                                <span class="s-header-v2__toggle-icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col-width--180">
+                            <!-- Logo -->
+                            <div class="s-header-v2__logo">
+                                <a href="/" class="s-header-v2__logo-link">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--default" src="static/img/up.png" alt="StartUp Conclave" height="30">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--shrink" src="static/img/up.png" alt="StartUp Conclave" height="30">
+                                </a>
+                            </div>
+                            <!-- End Logo -->
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right">
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
+                                <ul class="s-header-v2__nav">
+                                    <li class="s-header-v2__nav-item"><a href="/" class="s-header-v2__nav-link">Home</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Nav Menu -->
+                        </div>
+                    </div>
+                    <!-- End Navbar Row -->
+                </div>
+            </nav>
+            <!-- End Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
+
+
+        <!--========== PROMO BLOCK ==========-->
+        <div class="s-promo-block-v1  g-bg-color--primary-ltr" style="padding: 150px 30px; background: #fff">
+
+
+            <table id="table_id" class="display" style=" overflow-x: auto;">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Team Name</th>
+                        <th>Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    {{# each refers}}
+
+                        <tr class="dbrow">
+                            <td>{{@index}}</td>
+                            <td>{{this.teamName}}</td>
+                            <td>{{this.referName}}</td>
+                        </tr>
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <!--========== END PROMO BLOCK ==========-->
+
+        <!--========== FOOTER ==========-->
+        {{> footer}}
+        {{> scripts }}
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $('#table_id').DataTable();
+            } );
+
+        </script>
+    </body>
+    <!-- End Body -->
+</html>

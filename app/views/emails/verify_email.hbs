@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            li{
+                padding:10px;
+            }
+            p{
+                font-size:16px;
+            }
+
+            *{
+                font-family:Helvetica,Arial,sans-serif;
+            }
+
+            h2{
+                text-align: center;
+                margin-top: 150px;
+
+            }
+            html, body{
+                background-color:#f7f9fb;
+                margin: 0;
+            }
+            .context {
+                font-size: 12px;
+                padding: 40px 60px;
+                margin-left:10%;
+                margin-right: 10%;
+            }
+
+            .context p{
+                font-size: 12px;
+            }
+            @media(max-width: 700px){
+              .context p{
+                font-size: 15px;
+            }
+            }
+            p{
+                margin: 15px 0px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div style="background: #0b0b0b; padding:10px 30px;"><img src="https://www.ecellvnit.org/img/logo-ecell.png"></div>
+        <h2 style="font-size:22px;">Startup Conclave 2019<br><span style="font-size: 16px">Make Ideas Happen</span></h2><br>
+
+        <div class="context">
+
+
+            <h3><b>Hello {{name}},</b></h3>
+
+            <p>Thank You for registering with us. To complete your email verification kindly use this OTP: <b style="font-size: 15px;">{{otp}}</b><br></p>
+            <div>
+                <p>
+                    With warm regards,<br>
+                    PNAF & Team E-Cell, VNIT<br>
+                </p>
+
+
+            </div>
+        </div>
+    </body>
+</html>

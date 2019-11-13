@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    {{> head }}
+
+    <!-- Body -->
+    <body>
+
+
+        <!--========== HEADER ==========-->
+        <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
+            <!-- Navbar -->
+            <nav class="s-header-v2__navbar">
+                <div class="container g-display-table--lg">
+                    <!-- Navbar Row -->
+                    <div class="s-header-v2__navbar-row">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="s-header-v2__navbar-col">
+                            <button type="button" class="collapsed s-header-v2__toggle" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                                <span class="s-header-v2__toggle-icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col-width--180">
+                            <!-- Logo -->
+                            <div class="s-header-v2__logo">
+                                <a href="/" class="s-header-v2__logo-link">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--default" src="static/img/up.png" alt="StartUp Conclave" height="70">
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--shrink" src="static/img/up.png" alt="StartUp Conclave" height="60">
+                                </a>
+                            </div>
+                            <!-- End Logo -->
+                        </div>
+
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right">
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
+                                <ul class="s-header-v2__nav">
+                                    <li class="s-header-v2__nav-item"><a href="/" class="s-header-v2__nav-link">Home</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Nav Menu -->
+                        </div>
+                    </div>
+                    <!-- End Navbar Row -->
+                </div>
+            </nav>
+            <!-- End Navbar -->
+        </header>
+        <!--========== PROMO BLOCK ==========-->
+        <div id="faq" class="s-promo-block-v1 customheight g-bg-color--primary-ltr">
+            <div class="container g-ver-center--md g-padding-y-100--xs">
+                <div class="row g-hor-centered-row--md g-margin-t-20--xs g-margin-t-10--sm">
+                    <div class="col-lg-8 col-sm-6 g-hor-centered-row__col">
+                        <div class="wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
+                            <div class="g-text-center--xs g-margin-b-40--xs" style="padding-bottom:250px;">
+                              <h2 class="g-font-size-36--xs g-font-size-44--md g-color--white">Our Partners</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+      </div>
+
+      <div id="partners" class="g-position--relative">
+          <div class="container">
+              <div class="row g-hor-centered-row--md g-margin-t-10--xs g-margin-t-10--sm paddings">
+                  <div class="g-hor-centered-row__col g-text-center--xs" style="background:#fff;">
+                    <a href="https://www.msins.in/" target="_blank"><img class="partners" src="static/img/partners/MSInS.jpg" alt="MSInS logo" /></a>
+                    <a href="http://pmyuva.org/" target="_blank"><img class="partners" src="static/img/partners/yuva_yojana.jpeg" alt="PM Yuva Yojana Logo" /></a>
+                    <a href="http://lemonideas.in/" target="_blank"><img class="partners" src="static/img/partners/lemon_ideas.png" alt="PM Yuva Yojana Logo" /></a>
+                    <a href="https://ibhubs.co/" target="_blank"><img class="partners" src="static/img/partners/ibhubs.png" alt="PM Yuva Yojana Logo" /></a>
+                    <a href="https://www.facebook.com/thebillenniumdivas/" target="_blank"><img class="partners" src="static/img/partners/billenium_divas.png" alt="Billenium Divas Logo" /></a>
+                    <a href="http://namanangels.foundation/" target="_blank"><img class="partners" src="static/img/partners/naman_angels.png" alt="Naman Angels Logo" /></a>
+                    <a href="https://www.chaturideas.com/" target="_blank"><img class="partners" src="static/img/partners/chatur_ideas.png" alt="Chatur Ideas Logo" /></a>
+                    <a href="http://zoomstartindia.co/" target="_blank"><img class="partners" src="static/img/partners/zoom_start.png" alt="ZoomStart Logo" /></a>
+                    <a href="https://www.facebook.com/iamannitian/" target="_blank"><img class="partners" src="static/img/partners/i_am_nitian.png" alt="I am an NITian Logo" /></a>
+                    <a href="http://www.ecell-nitt.org/" target="_blank"><img class="partners" src="static/img/partners/nit_trichy.jpeg" alt="NIT Trichy Logo" /></a>
+                    <a href="https://www.facebook.com/industrycell/" target="_blank"><img class="partners" src="static/img/partners/nit_kurukshetra.png" alt="NIT Kurukshetra Logo" /></a>
+                    <a href="https://www.facebook.com/ecellnitj/" target="_blank"><img class="partners" src="static/img/partners/nit_jalandhar.jpg" alt="NIT Jalandhar Logo" /></a>
+                    <a href="https://www.facebook.com/ECell.Nitdgp/" target="_blank"><img class="partners" src="static/img/partners/nit_durgapur.jpeg" alt="NIT Durgapur Logo" /></a>
+                    <a href="https://www.facebook.com/ecell.nits/" target="_blank"><img class="partners" src="static/img/partners/nit_silchar.png" alt="NIT Silchar Logo" /></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!--========== END PROMO BLOCK ==========-->
+
+
+
+
+
+
+        <!--========== FOOTER ==========-->
+        {{> footer}}
+
+        <!--========== END FOOTER ==========-->
+
+        {{> scripts}}
+        <!--========== END JAVASCRIPTS ==========-->
+
+    </body>
+    <!-- End Body -->
+</html>
