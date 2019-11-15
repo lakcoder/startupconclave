@@ -8,15 +8,15 @@ const upload = multer({ dest: 'tmp/csv/' });
 module.exports = function (app) {
 
     app.get('/', authController.home);
-    app.get('/register',authController.register);
-    app.get('/registerother',authController.registerother);
+    // app.get('/register',authController.register);
+    app.get('/register',authController.registerother);
     app.get('/login',authController.login);
     app.get('/logout',authController.logout);
     app.get('/dashboard', authController.dashboard);
     app.get('/partners', authController.partners);
     // app.get('/ques', authController.question);
-    app.post('/register',authController.registeringnit);
-    app.post('/registerother',authController.registering);
+    app.post('/register',authController.registering);
+    // app.post('/registerother',authController.registering);
     app.get('/verify',authController.verify);
     app.get('/verify/otp',authController.verifyotp);
     app.post('/login',authController.logging);
