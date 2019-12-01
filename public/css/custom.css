@@ -1,19 +1,19 @@
-.input_fields_wrap{
-max-width: 350px;
+.input_fields_wrap {
+  max-width: 350px;
 }
-.input_fields_wrap input[type=text]{
- width:100%;
- margin:2px 0;
+.input_fields_wrap input[type="text"] {
+  width: 100%;
+  margin: 2px 0;
 }
 
-.grad{
-height:400px;
-width:300px;
-background:black;
--webkit-background:black;
--moz-background:black;
--o-background:black;
-/* background:linear-gradient(#d3d3d3 23%,#000000 87%);
+.grad {
+  height: 400px;
+  width: 300px;
+  background: black;
+  -webkit-background: black;
+  -moz-background: black;
+  -o-background: black;
+  /* background:linear-gradient(#d3d3d3 23%,#000000 87%);
 -webkit-background:linear-gradient(#000000 43%,#bd2026 87%);
 -moz-background:linear-gradient(#000000 43%,#bd2026 87%);
 -o-background:linear-gradient(#000000 43%,#bd2026 87%); */
@@ -32,210 +32,215 @@ background:black;
 }
 
 .collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active1 {
+  background-color: white;
 }
 
-.active, .collapsible:hover {
-    background-color: #555;
+.active,
+.collapsible:hover {
+  background-color: #555;
 }
 
 .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
 
 .resize {
-    height:150px;
-  }
+  height: 150px;
+}
 
 @media (min-width: 768px) {
   .resize {
-    height:280px;
+    height: 280px;
   }
 }
 
-#contact{
-    background: rgba(0,0,0,0.9);
+#contact {
+  background: rgba(0, 0, 0, 0.9);
 }
 
-#faq, #structure, #register, #login {
+#faq,
+#structure,
+#register,
+#login,
+#ruleandregulations {
   background-image: url("../img/background8-01.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size:cover;
+  -o-background-size: cover;
 
   /*background-repeat: no-repeat;*/
   /*background-position: center;*/
   /*background-attachment: fixed;*/
 }
-#register, #login{
-   min-height: 100vh !important;
-    height: auto;
+#register,
+#login {
+  min-height: 100vh !important;
+  height: auto;
 }
 
-#partners{
+#partners {
   background-image: url("../img/background8-01.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size:cover;
+  -o-background-size: cover;
 }
 
-
-
-#about, #mentors, #investors {
+#about,
+#mentors,
+#investors {
   background: white;
-  width:100%;
+  width: 100%;
 }
-
-
 
 .bg_element {
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   width: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size:cover;
-    padding: 30px 30px;
-    height: auto;
-    position: relative;
+  -o-background-size: cover;
+  padding: 30px 30px;
+  height: auto;
+  position: relative;
 }
 
 .verticalLine {
   border-left: solid #ffffff;
 }
 
-.faq_head{
+.faq_head {
   display: block;
   cursor: pointer;
 }
 
-.faq_con{
+.faq_con {
   display: none;
-    background: #ffffff00;
-    padding: 10px;
+  background: #ffffff00;
+  padding: 10px;
 }
 
-.regclass{
+.regclass {
   cursor: pointer;
   background: none;
 }
 
+@media (min-width: 768px) {
+  #home {
+    background-image: url("../img/landing.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
 
-@media(min-width: 768px){
+  #faq,
+  #contact,
+  #structure,
+  #register,
+  #login,
+  #ruleandregulations {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
 
-    #home{
+  #register,
+  #login {
+    min-height: 100vh !important;
+    height: auto;
+  }
 
-        background-image: url("../img/landing.jpg");
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size:cover;
-            background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
-
-    #faq, #contact, #structure, #register, #login{
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
-
-    #register, #login{
-       min-height: 100vh !important;
-        height: auto;
-    }
-
-    .bg_element {
-        padding: 40px 60px;
-    }
+  .bg_element {
+    padding: 40px 60px;
+  }
 }
 
+@media (max-width: 768px) {
+  form {
+    padding: 0px 20px;
+  }
 
+  #landing {
+    background-image: url("../img/landing.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-
-
-@media(max-width: 768px){
-    form{
-        padding: 0px 20px;
-    }
-
-
-    #landing {
-      background-image: url("../img/landing.jpg");
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size:cover;
-        background-size: cover;
-    }
-
-    #home{
-        background: #0b0b0b;
-    }
+  #home {
+    background: #0b0b0b;
+  }
 }
 
-
-#popup, #round11, #round2, #round3{
-    display: none;
-    width: 100%;
-    background: rgba(0,0,0,0.95);
-    color: #fff;
-    position: relative;
+#popup,
+#round11,
+#round2,
+#round3 {
+  display: none;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  position: relative;
 }
 
-#round11 #close{
+#round11 #close {
   color: #fff !important;
   position: relative;
 }
 
-#round2 #close{
+#round2 #close {
   color: #fff !important;
   position: relative;
 }
-#round3 #close{
-  color: #fff !important;
-  position: relative;
-}
-
-#structure #closestructre{
-  color: #fff !important;
-  position: relative;
-}
-#ruleandregulations #closerule{
-  color: #fff !important;
-  position: relative;
-}
-#faq #closefaq{
+#round3 #close {
   color: #fff !important;
   position: relative;
 }
 
+#structure #closestructre {
+  color: #fff !important;
+  position: relative;
+}
+#ruleandregulations #closerule {
+  color: #fff !important;
+  position: relative;
+}
+#faq #closefaq {
+  color: #fff !important;
+  position: relative;
+}
 
-#popup #close{
-    color: #fff !important;
-    position: relative;
+#popup #close {
+  color: #fff !important;
+  position: relative;
 }
 
 #managers h4 {
-    padding: 5px;
-    background: #bd202696;
-    color: #fff;
-    font-weight: bolder;
-
+  padding: 5px;
+  background: #bd202696;
+  color: #fff;
+  font-weight: bolder;
 }
 
-#managers p{
-    color: #fff;
+#managers p {
+  color: #fff;
 }
 
 .partners {
@@ -243,7 +248,6 @@ background:black;
   margin: 2%;
   height: 14em;
   width: 14em;
-
 }
 
 .paddings {
@@ -273,4 +277,55 @@ background:black;
   .customheight {
     height: 50vh;
   }
+}
+a {
+  text-decoration: burlywood;
+}
+
+div#menu_tab {
+  text-align: center;
+}
+
+div#menu_tab li {
+  display: inline;
+  padding: 15px;
+}
+
+div#menu_tab a {
+  display: inline-block;
+  position: relative;
+}
+
+div#menu_tab a:hover {
+  color: orange;
+}
+
+div#menu_tab a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: orange;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.15s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+div#menu_tab a:hover:before,
+div#menu_tab a.active:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+div#menu_tab a:active {
+  color: orange;
+  border: orange;
+}
+
+.active1 {
+  color: orange;
 }
