@@ -47,7 +47,7 @@ var gMail = function(to,subject, template, context){
               user: "contact@ecellvnit.org",
               clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
               clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-              refreshToken: "1/PSzNa9MUt0TrelnxYJGSTHxz8xLcYH3HvOdS537iSXDhFuhESQVOCUNQvIdFY-So",
+              refreshToken: "1//046KCGBYnsLCLCgYIARAAGAQSNwF-L9IrkIEJEv2Esq_JwfLL1j8pbU9SEVWeqNrYwgxysV1dr16yB1FmaVXNvwuPi-tSal0OOns",
               accessToken: accessToken
          }
     };
