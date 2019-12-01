@@ -29,7 +29,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1/PSzNa9MUt0TrelnxYJGSTHxz8xLcYH3HvOdS537iSXDhFuhESQVOCUNQvIdFY-So"
+     refresh_token: "1//04xHhY2AX0IyHCgYIARAAGAQSNwF-L9IrMHF_ULtizKNzPoP9YAF5rNVBV-3sS2zM3CEN-YhMj0r12-nEbeOFPyoZirX8t1Ovwlk"
 });
 
 const accessToken = oauth2Client.refreshAccessToken().then(function(res){
@@ -47,7 +47,7 @@ var gMail = function(to,subject, template, context){
               user: "contact@ecellvnit.org",
               clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
               clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-              refreshToken: "1//046KCGBYnsLCLCgYIARAAGAQSNwF-L9IrkIEJEv2Esq_JwfLL1j8pbU9SEVWeqNrYwgxysV1dr16yB1FmaVXNvwuPi-tSal0OOns",
+              refreshToken: "1//04xHhY2AX0IyHCgYIARAAGAQSNwF-L9IrMHF_ULtizKNzPoP9YAF5rNVBV-3sS2zM3CEN-YhMj0r12-nEbeOFPyoZirX8t1Ovwlk",
               accessToken: accessToken
          }
     };
@@ -166,11 +166,11 @@ exports.registeringnit = function (req, res) {
 
 
     if(!number){
-        res.render('register', {"message":"Minimum two members required"});
+        res.render('registerother', {"message":"Minimum two members required"});
     }
 
     else if(password.length < 8){
-        res.render('register', {"message":"Minimum 8 digit password"});
+        res.render('registerother', {"message":"Minimum 8 digit password"});
     }
     else if(teamname && organisation && teamemail && number && password){
 
@@ -216,11 +216,11 @@ exports.registeringnit = function (req, res) {
                             res.redirect("/verify");
                         }
                         else{
-                            res.render('register', {"message":"Team Email is already registerd!"});
+                            res.render('registerother', {"message":"Team Email is already registerd!"});
                         }
 
                     }).catch(function(err){
-                        res.render('register', {"message":"Team Email is already registerd!"});
+                        res.render('registerother', {"message":"Team Email is already registerd!"});
                     });
 
                 }
@@ -266,13 +266,13 @@ exports.registeringnit = function (req, res) {
 
                                 TeamMember.create({teamfk:newTeam.teamId, memberfk: newMember.memberId}).catch(function(err){
 
-                                    res.render('register', {"message":err});
+                                    res.render('registerother', {"message":err});
 
                                 });
 
 
                             }).catch(function(err){
-                                res.render('register', {"message":"Can't Create :"+err});
+                                res.render('registerother', {"message":"Can't Create :"+err});
 
                             });
 
@@ -291,7 +291,7 @@ exports.registeringnit = function (req, res) {
 
 
                     }).catch(function (reason) {
-                        res.render('register', {"message":"Something Went Wrong: "+reason});
+                        res.render('registerother', {"message":"Something Went Wrong: "+reason});
                     });
 
 
@@ -304,12 +304,12 @@ exports.registeringnit = function (req, res) {
             // res.render('ques');
         }
         else{
-            res.render('register', {"message":"Member Details can't be empty"});
+            res.render('registerother', {"message":"Member Details can't be empty"});
         }
 
     }
     else{
-        res.render('register', {"message":"Kindly Fill the form correctly"});
+        res.render('registerother', {"message":"Kindly Fill the form correctly"});
     }
 
 };
@@ -325,11 +325,11 @@ exports.registering = function (req, res) {
 
 
     if(!number){
-        res.render('registerother', {"message":"Minimum two members required"});
+        res.render('register', {"message":"Minimum two members required"});
     }
 
     else if(password.length < 8){
-        res.render('registerother', {"message":"Minimum 8 digit password"});
+        res.render('register', {"message":"Minimum 8 digit password"});
     }
     else if(teamname && organisation && teamemail && number && password){
 
@@ -428,13 +428,13 @@ exports.registering = function (req, res) {
 
                                 TeamMember.create({teamfk:newTeam.teamId, memberfk: newMember.memberId}).catch(function(err){
 
-                                    res.render('registerother', {"message":err});
+                                    res.render('register', {"message":err});
 
                                 });
 
 
                             }).catch(function(err){
-                                res.render('registerother', {"message":"Can't Create :"+err});
+                                res.render('register', {"message":"Can't Create :"+err});
 
                             });
 
@@ -451,7 +451,7 @@ exports.registering = function (req, res) {
 
 
                     }).catch(function (reason) {
-                        res.render('registerother', {"message":"Something Went Wrong: "+reason});
+                        res.render('register', {"message":"Something Went Wrong: "+reason});
                     });
 
 
@@ -462,12 +462,12 @@ exports.registering = function (req, res) {
             // res.render('ques');
         }
         else{
-            res.render('registerother', {"message":"Member Details can't be empty"});
+            res.render('register', {"message":"Member Details can't be empty"});
         }
 
     }
     else{
-        res.render('registerother', {"message":"Kindly Fill the form correctly"});
+        res.render('register', {"message":"Kindly Fill the form correctly"});
     }
 
 };

@@ -15,7 +15,7 @@ module.exports = function (app) {
     app.get('/dashboard', authController.dashboard);
     app.get('/partners', authController.partners);
     // app.get('/ques', authController.question);
-    app.post('/register',authController.registering);
+    app.post('/register-business',authController.registering);
     app.post('/register-social',authController.registeringnit);
     app.get('/verify',authController.verify);
     app.get('/verify/otp',authController.verifyotp);

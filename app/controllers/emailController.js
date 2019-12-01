@@ -18,7 +18,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1/PSzNa9MUt0TrelnxYJGSTHxz8xLcYH3HvOdS537iSXDhFuhESQVOCUNQvIdFY-So"
+     refresh_token: "1//04xHhY2AX0IyHCgYIARAAGAQSNwF-L9IrMHF_ULtizKNzPoP9YAF5rNVBV-3sS2zM3CEN-YhMj0r12-nEbeOFPyoZirX8t1Ovwlk"
 });
 
 const accessToken = oauth2Client.refreshAccessToken().then(function(res){
@@ -36,7 +36,7 @@ var htmlMail = function(to,subject, html){
               user: "contact@ecellvnit.org",
               clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
               clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-              refreshToken: "1//046KCGBYnsLCLCgYIARAAGAQSNwF-L9IrkIEJEv2Esq_JwfLL1j8pbU9SEVWeqNrYwgxysV1dr16yB1FmaVXNvwuPi-tSal0OOns",
+              refreshToken: "1//04xHhY2AX0IyHCgYIARAAGAQSNwF-L9IrMHF_ULtizKNzPoP9YAF5rNVBV-3sS2zM3CEN-YhMj0r12-nEbeOFPyoZirX8t1Ovwlk",
               accessToken: accessToken
          }
     };
@@ -94,7 +94,7 @@ exports.htmlemail = function (req, res) {
     console.log(subject);
 
 
-    if(pass == "intheend"){
+    if(pass == "Entrepreneurs1999"){
         const fileRows = [];
 
       // open uploaded file
@@ -139,7 +139,7 @@ exports.sendemail = function (req, res) {
     console.log(subject);
 
 
-    if(pass == "intheend"){
+    if(pass == "Entrepreneurs1999"){
 
         htmlMail(email, subject, html);
         console.log("Mail Sent");
