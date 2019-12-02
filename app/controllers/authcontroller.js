@@ -29,7 +29,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1//04xHhY2AX0IyHCgYIARAAGAQSNwF-L9IrMHF_ULtizKNzPoP9YAF5rNVBV-3sS2zM3CEN-YhMj0r12-nEbeOFPyoZirX8t1Ovwlk"
+     refresh_token: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w"
 });
 
 const accessToken = oauth2Client.refreshAccessToken().then(function(res){
@@ -46,8 +46,8 @@ var gMail = function(to,subject, template, context){
               type: "OAuth2",
               user: "contact@ecellvnit.org",
               clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
-              clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-              refreshToken: "1//04xHhY2AX0IyHCgYIARAAGAQSNwF-L9IrMHF_ULtizKNzPoP9YAF5rNVBV-3sS2zM3CEN-YhMj0r12-nEbeOFPyoZirX8t1Ovwlk",
+              clientSecret: "Jr-69fDiCG_YVRWFMDMHVrXp",
+              refreshToken: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w",
               accessToken: accessToken
          }
     };
@@ -172,7 +172,7 @@ exports.registeringnit = function (req, res) {
     else if(password.length < 8){
         res.render('registerother', {"message":"Minimum 8 digit password"});
     }
-    else if(teamname && organisation && teamemail && number && password){
+    else if(teamname && teamemail && number && password){
 
         console.log(req.body);
         var flag = 1;
@@ -331,7 +331,7 @@ exports.registering = function (req, res) {
     else if(password.length < 8){
         res.render('register', {"message":"Minimum 8 digit password"});
     }
-    else if(teamname && organisation && teamemail && number && password){
+    else if(teamname && teamemail && number && password){
 
         console.log(req.body);
         var flag = 1;
