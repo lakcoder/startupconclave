@@ -29,7 +29,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w"
+     refresh_token: "1//04t2_8Bn-S5IECgYIARAAGAQSNwF-L9IrEqGK4oLx4oohJ5sCBOSoXDXQ-9ehNP-njmUQ1qQXfNaTs5kq5weyfNQ_CqyDknGtb5M"
 });
 
 const accessToken = oauth2Client.refreshAccessToken().then(function(res){
@@ -38,25 +38,41 @@ const accessToken = oauth2Client.refreshAccessToken().then(function(res){
          console.log(reason);
 });
 
-var gMail = function(to,subject, template, context){
+var gMail = function(to,subject,template){
 
-    var Config = {
-         service: "gmail",
-         auth: {
-              type: "OAuth2",
-              user: "contact@ecellvnit.org",
-              clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
-              clientSecret: "Jr-69fDiCG_YVRWFMDMHVrXp",
-              refreshToken: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w",
-              accessToken: accessToken
-         }
-    };
+  var Config = {
+       service: "gmail",
+       auth: {
+            type: "OAuth2",
+            user: "contact@ecellvnit.org",
+            clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
+            clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
+            refreshToken: "1//04t2_8Bn-S5IECgYIARAAGAQSNwF-L9IrEqGK4oLx4oohJ5sCBOSoXDXQ-9ehNP-njmUQ1qQXfNaTs5kq5weyfNQ_CqyDknGtb5M",
+            accessToken: accessToken
+       }
+  };
 
 
     var transporter = nodemailer.createTransport(Config);
 
+    transporter.verify(function(err, success){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log("Connected!!!!!!!!!!!");
+      }
+    })
+
     transporter.use('compile', mailerhbs({
+        viewEngine: {
+          extName: '.hbs',
+          partialsDir: 'app/views/emails',
+          layoutsDir: 'app/views/emails',
+          defaultLayout: ''
+        },
         viewPath: 'app/views/emails', //Path to email template folder
+
         extName: '.hbs' //extendtion of email template
     }));
 
@@ -64,8 +80,9 @@ var gMail = function(to,subject, template, context){
       from: auth.user,
       to: to,
       subject: subject,
+      // html: html
       template: template,
-      context: context
+      // context: context
     };
 
 
@@ -77,52 +94,19 @@ var gMail = function(to,subject, template, context){
       }
     });
 
-
 };
 
 
-var sendMail = function(to,subject, template, context){
-
-    var Config = {
-        host: 'sharedlinux.cloudhostdns.net',
-        port: 465,
-        secure: true, // use TLS
-        auth: {
-            user: auth.user,
-            pass: auth.pass
-        }
-    };
-
-
-    var transporter = nodemailer.createTransport(Config);
-
-    transporter.use('compile', mailerhbs({
-        viewPath: 'app/views/emails', //Path to email template folder
-        extName: '.hbs' //extendtion of email template
-    }));
-
-    var mailOptions = {
-      from: auth.user,
-      to: to,
-      subject: subject,
-      template: template,
-      context: context
-    };
-
-
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
-
-
-};
 
 
 exports.home = function(req, res) {
+
+try{
+  gMail("sagarbansal099@gmail.com", "Hi is the subject", "r3_email");
+}
+catch(e){
+  console.log("message:Something Went Wrong: "+e);
+}
 
     res.render('index');
 
@@ -285,6 +269,7 @@ exports.registeringnit = function (req, res) {
                         var random = Math.floor(100000 + Math.random() * 900000);
                         req.session['otp'] = random;
                         gMail(teamemail, "Verify Your Email","verify_email", {"name":teamname, "otp":random});
+
                         res.redirect("/verify");
 
 
