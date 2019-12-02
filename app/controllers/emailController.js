@@ -20,49 +20,78 @@ const oauth2Client = new OAuth2(
 oauth2Client.setCredentials({
      refresh_token: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w"
 });
+const accessToken = oauth2Client.getAccessToken()
 
-const accessToken = oauth2Client.refreshAccessToken().then(function(res){
-       res.credentials.access_token
-     }).catch(function (reason) {
-         console.log(reason);
-});
+// const accessToken = oauth2Client.refreshAccessToken().then(function(res){
+//        res.credentials.access_token
+//      }).catch(function (reason) {
+//          console.log(reason);
+// });
 
 var htmlMail = function(to,subject, html){
-
-    var Config = {
-         service: "gmail",
-         auth: {
+  const smtpTransport = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
               type: "OAuth2",
               user: "contact@ecellvnit.org",
               clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
               clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
               refreshToken: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w",
               accessToken: accessToken
-         }
-    };
+   }});
+
+    // var Config = {
+    //      service: "gmail",
+    //      auth: {
+    //           type: "OAuth2",
+    //           user: "contact@ecellvnit.org",
+    //           clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
+    //           clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
+    //           refreshToken: "1//04AQM0Cmt5fgECgYIARAAGAQSNwF-L9IrmVG_YNqEqFwIWCvR2xAjxCKMIxxpd_iKB7QXYZl-F1qwuk9CNjUfKonP3aYBmNYMM6w",
+    //           accessToken: accessToken
+    //      }
+    // };
 
 
-    var transporter = nodemailer.createTransport(Config);
+    // var transporter = nodemailer.createTransport(Config);
 
     // transporter.use('compile', mailerhbs({
     //     viewPath: 'app/views/emails', //Path to email template folder
     //     extName: '.hbs' //extendtion of email template
     // }));
 
-    var mailOptions = {
+    const mailOptions = {
       from: "contact@ecellvnit.org",
       to: to,
       subject: subject,
       html: html
     };
 
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
+    const handlebarOptions = {
+      viewEngine: {
+        extName: '.hbs',
+        partialsDir: 'views/includes',
+        // layoutsDir: 'src/path',
+        defaultLayout: 'email.hbs',
+      },
+      viewPath: 'views/emails/',
+      extName: '.hbs',
+};
+
+    transporter.use('compile', hbs(handlebarOptions));
+
+    smtpTransport.sendMail(mailOptions, (error, response) => {
+     error ? console.log(error) : console.log(response);
+     smtpTransport.close();
     });
+
+    // transporter.sendMail(mailOptions, function(error, info){
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log('Email sent: ' + info.response);
+    //   }
+    // });
 
 
 };
