@@ -38,7 +38,7 @@ const accessToken = oauth2Client.refreshAccessToken().then(function(res){
          console.log(reason);
 });
 
-var gMail = function(to,subject,template){
+var gMail = function(to,subject,template,context){
 
   var Config = {
        service: "gmail",
@@ -82,7 +82,7 @@ var gMail = function(to,subject,template){
       subject: subject,
       // html: html
       template: template,
-      // context: context
+      context: context
     };
 
 
@@ -100,13 +100,6 @@ var gMail = function(to,subject,template){
 
 
 exports.home = function(req, res) {
-
-try{
-  gMail("sagarbansal099@gmail.com", "Hi is the subject", "r3_email");
-}
-catch(e){
-  console.log("message:Something Went Wrong: "+e);
-}
 
     res.render('index');
 
