@@ -29,7 +29,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1/PSzNa9MUt0TrelnxYJGSTHxz8xLcYH3HvOdS537iSXDhFuhESQVOCUNQvIdFY-So"
+     refresh_token: "1//04t2_8Bn-S5IECgYIARAAGAQSNwF-L9IrEqGK4oLx4oohJ5sCBOSoXDXQ-9ehNP-njmUQ1qQXfNaTs5kq5weyfNQ_CqyDknGtb5M"
 });
 
 const accessToken = oauth2Client.refreshAccessToken().then(function(res){
@@ -38,25 +38,41 @@ const accessToken = oauth2Client.refreshAccessToken().then(function(res){
          console.log(reason);
 });
 
-var gMail = function(to,subject, template, context){
+var gMail = function(to,subject,template,context){
 
-    var Config = {
-         service: "gmail",
-         auth: {
-              type: "OAuth2",
-              user: "contact@ecellvnit.org",
-              clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
-              clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-              refreshToken: "1/PSzNa9MUt0TrelnxYJGSTHxz8xLcYH3HvOdS537iSXDhFuhESQVOCUNQvIdFY-So",
-              accessToken: accessToken
-         }
-    };
+  var Config = {
+       service: "gmail",
+       auth: {
+            type: "OAuth2",
+            user: "contact@ecellvnit.org",
+            clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
+            clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
+            refreshToken: "1//04t2_8Bn-S5IECgYIARAAGAQSNwF-L9IrEqGK4oLx4oohJ5sCBOSoXDXQ-9ehNP-njmUQ1qQXfNaTs5kq5weyfNQ_CqyDknGtb5M",
+            accessToken: accessToken
+       }
+  };
 
 
     var transporter = nodemailer.createTransport(Config);
 
+    transporter.verify(function(err, success){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log("Connected!!!!!!!!!!!");
+      }
+    })
+
     transporter.use('compile', mailerhbs({
+        viewEngine: {
+          extName: '.hbs',
+          partialsDir: 'app/views/emails',
+          layoutsDir: 'app/views/emails',
+          defaultLayout: ''
+        },
         viewPath: 'app/views/emails', //Path to email template folder
+
         extName: '.hbs' //extendtion of email template
     }));
 
@@ -64,6 +80,7 @@ var gMail = function(to,subject, template, context){
       from: auth.user,
       to: to,
       subject: subject,
+      // html: html
       template: template,
       context: context
     };
@@ -77,49 +94,9 @@ var gMail = function(to,subject, template, context){
       }
     });
 
-
 };
 
 
-var sendMail = function(to,subject, template, context){
-
-    var Config = {
-        host: 'sharedlinux.cloudhostdns.net',
-        port: 465,
-        secure: true, // use TLS
-        auth: {
-            user: auth.user,
-            pass: auth.pass
-        }
-    };
-
-
-    var transporter = nodemailer.createTransport(Config);
-
-    transporter.use('compile', mailerhbs({
-        viewPath: 'app/views/emails', //Path to email template folder
-        extName: '.hbs' //extendtion of email template
-    }));
-
-    var mailOptions = {
-      from: auth.user,
-      to: to,
-      subject: subject,
-      template: template,
-      context: context
-    };
-
-
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
-
-
-};
 
 
 exports.home = function(req, res) {
@@ -166,13 +143,13 @@ exports.registeringnit = function (req, res) {
 
 
     if(!number){
-        res.render('register', {"message":"Minimum two members required"});
+        res.render('registerother', {"message":"Minimum two members required"});
     }
 
     else if(password.length < 8){
-        res.render('register', {"message":"Minimum 8 digit password"});
+        res.render('registerother', {"message":"Minimum 8 digit password"});
     }
-    else if(teamname && organisation && teamemail && number && password){
+    else if(teamname && teamemail && number && password){
 
         console.log(req.body);
         var flag = 1;
@@ -216,11 +193,11 @@ exports.registeringnit = function (req, res) {
                             res.redirect("/verify");
                         }
                         else{
-                            res.render('register', {"message":"Team Email is already registerd!"});
+                            res.render('registerother', {"message":"Team Email is already registerd!"});
                         }
 
                     }).catch(function(err){
-                        res.render('register', {"message":"Team Email is already registerd!"});
+                        res.render('registerother', {"message":"Team Email is already registerd!"});
                     });
 
                 }
@@ -266,13 +243,13 @@ exports.registeringnit = function (req, res) {
 
                                 TeamMember.create({teamfk:newTeam.teamId, memberfk: newMember.memberId}).catch(function(err){
 
-                                    res.render('register', {"message":err});
+                                    res.render('registerother', {"message":err});
 
                                 });
 
 
                             }).catch(function(err){
-                                res.render('register', {"message":"Can't Create :"+err});
+                                res.render('registerother', {"message":"Can't Create :"+err});
 
                             });
 
@@ -285,13 +262,14 @@ exports.registeringnit = function (req, res) {
                         var random = Math.floor(100000 + Math.random() * 900000);
                         req.session['otp'] = random;
                         gMail(teamemail, "Verify Your Email","verify_email", {"name":teamname, "otp":random});
+
                         res.redirect("/verify");
 
 
 
 
                     }).catch(function (reason) {
-                        res.render('register', {"message":"Something Went Wrong: "+reason});
+                        res.render('registerother', {"message":"Something Went Wrong: "+reason});
                     });
 
 
@@ -304,12 +282,12 @@ exports.registeringnit = function (req, res) {
             // res.render('ques');
         }
         else{
-            res.render('register', {"message":"Member Details can't be empty"});
+            res.render('registerother', {"message":"Member Details can't be empty"});
         }
 
     }
     else{
-        res.render('register', {"message":"Kindly Fill the form correctly"});
+        res.render('registerother', {"message":"Kindly Fill the form correctly"});
     }
 
 };
@@ -325,13 +303,13 @@ exports.registering = function (req, res) {
 
 
     if(!number){
-        res.render('registerother', {"message":"Minimum two members required"});
+        res.render('register', {"message":"Minimum two members required"});
     }
 
     else if(password.length < 8){
-        res.render('registerother', {"message":"Minimum 8 digit password"});
+        res.render('register', {"message":"Minimum 8 digit password"});
     }
-    else if(teamname && organisation && teamemail && number && password){
+    else if(teamname && teamemail && number && password){
 
         console.log(req.body);
         var flag = 1;
@@ -428,13 +406,13 @@ exports.registering = function (req, res) {
 
                                 TeamMember.create({teamfk:newTeam.teamId, memberfk: newMember.memberId}).catch(function(err){
 
-                                    res.render('registerother', {"message":err});
+                                    res.render('register', {"message":err});
 
                                 });
 
 
                             }).catch(function(err){
-                                res.render('registerother', {"message":"Can't Create :"+err});
+                                res.render('register', {"message":"Can't Create :"+err});
 
                             });
 
@@ -451,7 +429,7 @@ exports.registering = function (req, res) {
 
 
                     }).catch(function (reason) {
-                        res.render('registerother', {"message":"Something Went Wrong: "+reason});
+                        res.render('register', {"message":"Something Went Wrong: "+reason});
                     });
 
 
@@ -462,12 +440,12 @@ exports.registering = function (req, res) {
             // res.render('ques');
         }
         else{
-            res.render('registerother', {"message":"Member Details can't be empty"});
+            res.render('register', {"message":"Member Details can't be empty"});
         }
 
     }
     else{
-        res.render('registerother', {"message":"Kindly Fill the form correctly"});
+        res.render('register', {"message":"Kindly Fill the form correctly"});
     }
 
 };

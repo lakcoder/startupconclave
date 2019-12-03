@@ -56,7 +56,7 @@
             <div class="g-container--sm g-padding-y-80--xs g-padding-y-125--xsm">
                 <div class="g-text-center--xs g-margin-b-60--xs">
                     <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-25--xs">Sign Up</p>
-                    <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Registerations Closed</h2>
+                    <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Register Your Team!<br><span class="g-font-size-20--xs g-font-size-28--md g-color--red"> Business Tier</span></h2>
                     {{# if message}}
                     <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--red g-letter-spacing--2 g-margin-b-25--xs">{{message}}</p>
                     {{/if}}
@@ -64,7 +64,7 @@
                 </div>
                 <form class="center-block g-width-500--sm g-width-550--md" method="post" action="" onsubmit="return validateData();">
                     <div class="permanent">
-                        <div class="g-margin-b-30--xs">
+                        <!-- <div class="g-margin-b-30--xs">
                             <select type="choice" class="form-control s-form-v3__input" placeholder="* College" name="organisation" id="college">
                               <option value="" selected disabled hidden>Choose College</option>
                               <option value="NIT Agartala" style="color:black">NIT Agartala</option>
@@ -99,7 +99,7 @@
                               <option value="NIT Uttarakhand" style="color:black">NIT Uttarakhand</option>
                               <option value="NIT Warangal" style="color:black">NIT Warangal</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="g-margin-b-30--xs">
                             <input type="text" class="form-control s-form-v3__input" placeholder="* Team Name" name="teamname" id="team_name">
                         </div>
@@ -123,13 +123,13 @@
                     </div>
                     <!--<div class="temp"></sdiv>-->
                     <div class="g-margin-b-30--xs">
-                            <input type="password" class="form-control s-form-v3__input" placeholder="* Password" name="password" id="password">
+                            <input type="password" class="form-control s-form-v3__input" placeholder="*Choose a Password (More than 8 characters)" name="password" id="password">
                     </div>
 
 
 
                     <div class="g-text-center--xs">
-                        <button type="submit" disabled class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50 g-padding-x-70--xs g-margin-b-20--xs">Submit</button>
+                        <button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50 g-padding-x-70--xs g-margin-b-20--xs">Submit</button>
                     </div>
                 </form>
             </div>
