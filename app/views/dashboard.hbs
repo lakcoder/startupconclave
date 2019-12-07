@@ -116,10 +116,10 @@
                             <!--<p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">-->
                                 <!--This round commences with filling our questionnaire. Our experts will analyze your responses and will shortlist teams for second round. Be brief about your each and every response and make sure that the language is comprehensible.-->
                             <!--</p>-->
-                            <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br> Questionnaire will be available from <b>5<sup>th</sup> December 2019.</b></p>
+                            <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>4<sup>th</sup> January 2020.</b></p>
                             <br>
                             <span class="g-display-block--xs g-display-inline-block--sm">
-                                <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a> -->
+                                <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a>
 
                                 <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning Resources</button></a>
                             </span>
@@ -284,7 +284,12 @@
                     <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Questionnaire</h2>
                 </div>
                 <p class="g-font-size-16--xs g-font-weight--700 g-text-center--xs g-color--white-opacity g-letter-spacing--2 g-margin-b-35--xs">
-                    <b>This is the questionnaire for the first round of the competition.<br>Click on 'Save Changes' button to save your responses. <br> Your responses will be auto submitted on 4<sup>th</sup> January 2020.</b>
+                    This is the questionnaire for the first round of the competition.<br>Please go through the questions stated below and submit your responses in a pdf file.<br>The name of your pdf file should be <b>'{{session.teamname}}_questionnaire.pdf'</b><br>
+                     Deadline to submit your questionnaire is 4<sup>th</sup> January 2020.
+                    <span class="g-display-block--xs g-display-inline-block--sm" style="padding-top:2em;">
+                      <a href="https://www.dropbox.com/request/AQ2jd9ayqPCBtyID9HU0" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Submit Your Questionnaire</button></a>
+                    </span><br><br>
+                    Click/ tap on each section to view the questions below.
                 </p>
                 <br>
                 <div class="row g-padding-x-20--xs">
@@ -300,15 +305,18 @@
                                         <form id="description" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-30--xs">
-                                                Idea Name:<input type="text" class="form-control s-form-v6__input q1" placeholder="" value="{{finallist.descriptionlist.q1}}">
+                                                Idea Name:
+                                                <!-- <input type="text" class="form-control s-form-v6__input q1" placeholder="" value="{{finallist.descriptionlist.q1}}"> -->
                                             </div>
                                             <div class="g-margin-b-50--xs">
-                                                Category:<input type="text" class="form-control s-form-v6__input q2" placeholder="" value="{{finallist.descriptionlist.q2}}">
+                                                Category:
+                                                <!-- <input type="text" class="form-control s-form-v6__input q2" placeholder="" value="{{finallist.descriptionlist.q2}}"> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Description of Idea<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.descriptionlist.q3}}</textarea>
+                                                Description of Idea:
+                                                <!-- <textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.descriptionlist.q3}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('description');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('description');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -326,13 +334,15 @@
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-color--white-opacity">
                                                 <div class="g-margin-b-80--xs">
-                                                    Problem being solved? (What current problem is your venture targeting?)<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.problemlist.q1}}</textarea>
+                                                    Problem being solved? (What current problem is your venture targeting?)
+                                                    <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.problemlist.q1}}</textarea> -->
                                                 </div>
                                                 <div class="g-margin-b-80--xs">
-                                                    Why do you believe it's a major problem?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.problemlist.q2}}</textarea>
+                                                    Why do you believe it's a major problem?
+                                                    <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.problemlist.q2}}</textarea> -->
                                                 </div>
                                             </div>
-                                            <button type="submit" onclick="letAjax('problem');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('problem');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
 
@@ -348,18 +358,16 @@
                                 <div class="cbp-caption-activeWrap faq_con">
                                     <div class="g-color--white-opacity">
                                 <form id="solution" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
-                                <div class="cbp-caption-activeWrap faq_con">
-                                    <div class="g-color--white-opacity">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                 Your Solution? (How your product/service can help in resolving the above problem.)<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.solutionlist.q1}}</textarea>
+                                                 Your Solution? (How your product/service can help in resolving the above problem.)
+                                                 <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.solutionlist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Product or Service description:<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.solutionlist.q2}}</textarea>
+                                                Product or Service description:
+                                                <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.solutionlist.q2}}</textarea> -->
                                             </div>
-                                    </div>
-                                </div>
-                                            <button type="submit" onclick="letAjax('solution');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('solution');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                 </form>
                               </div>
                             </div>
@@ -377,12 +385,14 @@
                                         <form id="status" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                Current Status of your venture (like idea stage, prototype, etc.):<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.statuslist.q1}}</textarea>
+                                                Current Status of your venture (like idea stage, prototype, etc.):
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.statuslist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Mention if you have secured funding, incubation or enrolled in any (if any) of the accelerator program.<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.statuslist.q2}}</textarea>
+                                                Mention if you have secured funding, incubation or enrolled in any (if any) of the accelerator program.
+                                                <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.statuslist.q2}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('status');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('status');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -399,15 +409,18 @@
                                         <form id="targetmarket" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                What market will you target initially? (Be clear about who will utilize your product/services and how will they access it. This section should therefore give a sense about the size of the market and market research (e.g. In India, there are ___ number of car owners who will buy your service at Rs. ____ per year. This translates into a market potential of Rs. ____ per year).<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.targetmarketlist.q1}}</textarea>
+                                                What market will you target initially? (Be clear about who will utilize your product/services and how will they access it. This section should therefore give a sense about the size of the market and market research (e.g. In India, there are ___ number of car owners who will buy your service at Rs. ____ per year. This translates into a market potential of Rs. ____ per year).
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.targetmarketlist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                 Who is your most important customer and why?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.targetmarketlist.q2}}</textarea>
+                                                 Who is your most important customer and why?
+                                                 <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.targetmarketlist.q2}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                What is your vision regarding your addressable market? (Total market that you want to grab if all of them were to buy your product/ services (not that they will, but this is to give an indication of what size of the market is ))<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.targetmarketlist.q3}}</textarea>
+                                                What is your vision regarding your addressable market? (Total market that you want to grab if all of them were to buy your product/ services (not that they will, but this is to give an indication of what size of the market is ))
+                                                <!-- <textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.targetmarketlist.q3}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('targetmarket');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('targetmarket');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -424,15 +437,18 @@
                                         <form id="competitors" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                Who is your Direct Competitor?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.competitorslist.q1}}</textarea>
+                                                Who is your Direct Competitor?
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.competitorslist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Who is likely to be your Indirect Competitor and why?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.competitorslist.q2}}</textarea>
+                                                Who is likely to be your Indirect Competitor and why?
+                                                <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.competitorslist.q2}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Describe how you will differentiate your venture from your competitor in your market:<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.competitorslist.q3}}</textarea>
+                                                Describe how you will differentiate your venture from your competitor in your market:
+                                                <!-- <textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.competitorslist.q3}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('competitors');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('competitors');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -449,15 +465,18 @@
                                         <form id="revenue" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                What is your revenue model and how will you make money from this business opportunity?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.revenuelist.q1}}</textarea>
+                                                What is your revenue model and how will you make money from this business opportunity?
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.revenuelist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                What do you consider as the factors that may affect your revenue and cost?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.revenuelist.q2}}</textarea>
+                                                What do you consider as the factors that may affect your revenue and cost?
+                                                <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.revenuelist.q2}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                What are the growth opportunities in your venture?<textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.revenuelist.q3}}</textarea>
+                                                What are the growth opportunities in your venture?
+                                                <!-- <textarea class="form-control s-form-v6__input q3" rows="5" placeholder="">{{finallist.revenuelist.q3}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('revenue');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('revenue');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -477,9 +496,10 @@
                                         <form id="social" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                Any substantial social and/or environmental benefits by your idea?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.sociallist.q1}}</textarea>
+                                                Any substantial social and/or environmental benefits by your idea?
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.sociallist.q1}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('social');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('social');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -496,12 +516,14 @@
                                         <form id="marketing" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                What marketing techniques will you use to market your product?<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.marketinglist.q1}}</textarea>
+                                                What marketing techniques will you use to market your product?
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.marketinglist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Why do you believe this will work?<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.marketinglist.q2}}</textarea>
+                                                Why do you believe this will work?
+                                                <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.marketinglist.q2}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('marketing');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('marketing');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
                                         </form>
                                     </div>
                                 </div>
@@ -518,12 +540,14 @@
                                         <form id="qteam" class="center-block g-width-500--sm g-width-550--md" onsubmit="return false;">
                                             <p class="g-font-size-16--xs g-text-center--xs g-color--red g-margin-b-25--xs"></p>
                                             <div class="g-margin-b-80--xs">
-                                                Highlight what will each member of the team do in the venture and why he / she is best suited for that role:<textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.teamlist.q1}}</textarea>
+                                                Highlight what will each member of the team do in the venture and why he / she is best suited for that role:
+                                                <!-- <textarea class="form-control s-form-v6__input q1" rows="5" placeholder="">{{finallist.teamlist.q1}}</textarea> -->
                                             </div>
                                             <div class="g-margin-b-80--xs">
-                                                Highlight the work experience and education background of all the team members:<textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.teamlist.q2}}</textarea>
+                                                Highlight the work experience and education background of all the team members:
+                                                <!-- <textarea class="form-control s-form-v6__input q2" rows="5" placeholder="">{{finallist.teamlist.q2}}</textarea> -->
                                             </div>
-                                            <button type="submit" onclick="letAjax('qteam');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button>
+                                            <!-- <button type="submit" onclick="letAjax('qteam');" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs">Save Changes</button> -->
 
                                         </form>
                                     </div>
