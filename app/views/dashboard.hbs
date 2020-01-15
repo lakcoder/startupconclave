@@ -95,31 +95,32 @@
                               </div>
                             </div>
                       {{ else if session.round2}}
-                            <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Not Selected For Round 3</p>
+                            <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Congratulations! Your team has been selected for round 2!</p>
 
-                        <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}: {{session.college}}</span></h3>
+                        <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}</span></h3>
 
-                            <!--<p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">-->
-                                <!--Mentor: <b>Your Team's Mentor Name will be display here.</b>-->
-                            <!--</p>-->
-                            <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 2 is our Business Plan Round. In this round, you will create a B-plan which will map the startup's future course of action. Also, upload a video of your elevator pitch which will be of maximum one minute duration.</p>
+                            <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
+                                Mentor: <b>Your Team's Mentor Name will be displayed here.</b>
+                            </p>
+                            <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 2 is our Business Model Round. In this round, you have to create an executive summary showcasing the future course of action of the startup. <br>
+                              Also, you have to upload a video of your elevator pitch which will be of maximum <b>three minute duration</b>.</p>
 
                         <br>
                         <span class="g-display-block--xs g-display-inline-block--sm">
-                            <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a>
-                            <!--<a id="round2_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed to Round 2  <span class="ti-arrow-right"></span></button></a>-->
+                            <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a> -->
+                            <a id="round2_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed to Round 2  <span class="ti-arrow-right"></span></button></a>
                         </span>
                         {{else}}
-                            <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome to Round 1! {{session.round2}}</p>
+                            <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">We regret to inform you that you aren't selected for round 2.</p>
                             <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
 
-                            <!--<p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">-->
-                                <!--This round commences with filling our questionnaire. Our experts will analyze your responses and will shortlist teams for second round. Be brief about your each and every response and make sure that the language is comprehensible.-->
-                            <!--</p>-->
-                            <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>13<sup>th</sup> January 2020.</b></p>
+                            <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
+                                We wish you good luck for your startup! See you at the next edition of StartUp Conclave!
+                            </p>
+                            <!-- <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>13<sup>th</sup> January 2020.</b></p> -->
                             <br>
                             <span class="g-display-block--xs g-display-inline-block--sm">
-                                <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a>
+                                <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a> -->
 
                                 <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning Resources</button></a>
                             </span>
@@ -135,24 +136,25 @@
                     <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Round 2</h2>
                     <div style="padding-top:7em;padding-bottom:7em;">
                     <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Your Elevator Pitch</p><br/>
-                    <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">An elevator pitch is a short description of your idea, product or startup that will expain the entire concept in one minute.
-                      <br/>You have to submit your Elevator Pitch till <b>22<sup>nd</sup> January 2019.</b>
+                    <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">An elevator pitch is a short description of your idea, product or startup that will expain the entire concept in 1 to 3 minutes.
+                      <br/>You have to submit your Elevator Pitch till <b>23<sup>rd</sup> January 2019.</b>
                       <br/>Please submit your Elevator Pitch only in a <b>.mp4 format.</b>
                       <br/>The name of your video should be in this format: '<b>{{session.teamname}}_startupconclave.mp4</b>'.</p>
                     <span class="g-display-block--xs g-display-inline-block--sm">
-                        <a href="https://www.dropbox.com/request/1kjVYSDi00oRYXoCIWWB" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Submit Your Elevator Pitch</button></a>
+                        <a href="https://www.dropbox.com/request/BDu9t6C2k1CYEUNw4oF9" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Submit Your Elevator Pitch</button></a>
                     </span>
                     </div>
                     <div>
-                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Your B-Plan</p><br/>
-                    <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">A business plan is a document which maps the company's future course of action and projections.
-                      <br/>You have to submit a Business Plan draft till <b>10<sup>th</sup> February 2019.</b>
+                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Your Executive Summary</p><br/>
+                    <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Details regarding the same will we displayed here soon.
+                      <!-- <br/>You have to submit a Business Plan draft till <b>10<sup>th</sup> February 2019.</b>
                       <br/>You can take a reference from our <a href="https://docs.google.com/document/d/128cDrVhdIHAcJlp2txMLeu9xTnMDe7kWYBK1aowgBbU/edit?usp=sharing" target="_blank">Business Plan Template</a>.
                       <br/>Please submit your Business Plan document in <b>PDF format</b> only.
-                      <br/>The name of your document should be '<b>{{session.teamname}}_startupconclave.pdf</b>'.</p>
-                    <span class="g-display  -block--xs g-display-inline-block--sm">
+                      <br/>The name of your document should be '<b>{{session.teamname}}_startupconclave.pdf</b>'. -->
+                    </p>
+                    <!-- <span class="g-display  -block--xs g-display-inline-block--sm">
                         <a href="https://www.dropbox.com/request/67JMUxhopLzI4qCMksSf" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Submit Your Business Plan</button></a>
-                    </span>
+                    </span> -->
                     </div>
                 </div>
             </div>
