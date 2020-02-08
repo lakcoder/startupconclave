@@ -60,16 +60,16 @@
 
                     <div id="round1" class="g-padding-x-100--md g-padding-x-120--lg g-padding-y-30--xs g-padding-x-40 g-padding-x-15--xs">
                       {{# if session.round3}}
-                      <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome To Round 3</p>
-                          <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}: {{session.college}}</span></h3>
-                      <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 3 is the pitching round wherein you have to pitch your startup in front of an investor panel.</p>
+                      <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Congratulations on qualifying for the final round of StartUp Conclave</p>
+                          <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}</span></h3>
+                      <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 3 is the pitching round wherein you have to pitch your startup in front of our esteemed investor panel. (Details about the investors will be emailed to you, soon.)</p>
 
 
                       <p class=" g-font-size-22--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm"><b>{{session.confirm}}</b></p>
 
                       <br>
                       <span class="g-display-block--xs g-display-inline-block--sm">
-                          <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a>
+                          <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a> -->
                           <a id="round3_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed to Round 3<span class="ti-arrow-right"></span></button></a>
                       </span>
 
@@ -95,20 +95,21 @@
                               </div>
                             </div>
                       {{ else if session.round2}}
-                            <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Congratulations! Your team has been selected for round 2!</p>
+                            <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Not Selected in round 3. Better luck next time!</p>
 
                         <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}</span></h3>
 
                             <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                                Mentor: <b>Your Team's Mentor will be informed you over a call/ email.</b>
+                                <b>We wish you best of luck for your future endeavours.</b>
+                                <b>The pitching of the teams of VNIT is being rescheduled. If you're from VNIT, you'll be contacted soon.</b>
                             </p>
-                            <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 2 is our Business Model Round. In this round, you have to create an executive summary showcasing the future course of action of the startup. <br>
-                              Also, you have to upload a video of your elevator pitch which will be of maximum <b>three minute duration</b>.</p>
+                            <!-- <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 2 is our Business Model Round. In this round, you have to create an executive summary showcasing the future course of action of the startup. <br>
+                              Also, you have to upload a video of your elevator pitch which will be of maximum <b>three minute duration</b>.</p> -->
 
                         <br>
                         <span class="g-display-block--xs g-display-inline-block--sm">
                             <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a> -->
-                            <a id="round2_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed to Round 2  <span class="ti-arrow-right"></span></button></a>
+                            <!-- <a id="round2_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed to Round 2  <span class="ti-arrow-right"></span></button></a> -->
                         </span>
                         {{else}}
                             <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">We regret to inform you that you aren't selected for round 2.</p>
@@ -170,22 +171,17 @@
                   <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Round 3</h2>
 
                   <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                      <b>Congratulations on qualifying for the final round of StartUp Conclave. <br> You are now among the top 15 teams of 407 teams registered all over India!</b>
+                      <b>Congratulations on qualifying for the final round of StartUp Conclave. <br> You are now among the top 10 teams out of more than 200 teams registered all over India!</b>
                   </p>
 
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/1RMGk0R1dhg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/1RMGk0R1dhg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                   <div class="row">
                       <div class="col-xs-4 g-full-width--xs g-margin-b-50--xs g-margin-b-0--sm" style="padding-top:2em;padding-bottom:2em;">
                         <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">General Details</p><br/>
                         <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                            {{# if session.isNIT }}
-                                Date: <b>9<sup>th</sup> March 2019</b><br>
-                                Venue: <b>Auditorium, VNIT Nagpur</b><br>
-                            {{else}}
-                                Date: <b>10<sup>th</sup> March 2019</b><br>
-                                Venue: <b>PAH, VNIT Nagpur</b><br>
-                            {{/if}}
+                                Date: <b>22<sup>nd</sup> February 2020</b><br>
+                                Venue: <b>Assembly Hall, MAC, VNIT Nagpur</b><br>
                             Time: <b>9:00 AM IST</b>
 
                         </p>
@@ -203,27 +199,28 @@
                       <div class="col-xs-4 g-full-width--xs g-margin-b-50--xs g-margin-b-0--sm" style="padding-top:2em;padding-bottom:2em;">
                         <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Accomodation</p><br/>
                         <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                            The accommodation of <b>{{session.teamname}}</b> will be arranged by E-Cell VNIT at VNIT Nagpur from 8<sup>th</sup> March to 10<sup>th</sup> March 2019.<br>
+                          The details of Accomodation will be updated soon.
+                            <!-- The accommodation of <b>{{session.teamname}}</b> will be arranged by E-Cell VNIT at VNIT Nagpur from 8<sup>th</sup> March to 10<sup>th</sup> March 2019.<br> -->
 
                         </p>
-                          {{# if session.isNIT }}
+                          <!-- {{# if session.isNIT }}
                           <a class="g-font-size-18--xs" target="_blank" href="https://drive.google.com/file/d/1AEr_1Ts2xn19-2f5civMlfAIg0AQYLUw/view?usp=sharing">Accommodation Policy</a>
                           {{else}}
                           <a class="g-font-size-18--xs" target="_blank" href="https://drive.google.com/file/d/1RlYFPNN18D4iuf8nKkoa7gZdtFM_3Fe3/view?usp=sharing">Accommodation Policy</a>
-                          {{/if}}
+                          {{/if}} -->
                       </div>
                   </div>
 
                   <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Final Pitch Deck</h2>
                 <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">A pitch deck is a brief presentation, often created using PowerPoint, Keynote or Prezi, used to provide your audience with a quick overview of your business plan.<br/> You will use your pitch deck during face-to-face meetings with potential investors, customers, partners, and co-founders.<br>
-                    Note: A workshop on '<b>How To Pitch</b>' will be conducted 5<sup>th</sup> March 2019 to refine your pitch decks.
+                    <!-- Note: A workshop on '<b>How To Pitch</b>' will be conducted 5<sup>th</sup> March 2019 to refine your pitch decks. -->
                     <br>
-                      <br/>You have to submit your Final Pitch Deck till <b>7<sup>th</sup> March 2019.</b>
+                      <br/>You have to submit your Final Pitch Deck till <b>20<sup>th</sup> February 2020.</b>
                       <br/>Please submit your Elevator Pitch only in a <b>.pptx or .pdf format.</b>
-                      <br/>The name of your video should be in this format: '<b>{{session.teamname}}_sc_final.pptx</b>'.</p>
+                      <br/>The name of your document should be in this format: '<b>{{session.teamname}}_sc_final.pptx</b>'.</p>
                   </p>
                     <span class="g-display-block--xs g-display-inline-block--sm">
-                        <a href="https://www.dropbox.com/request/wEgWvCaG23DBtJEVgF8z" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50 g-padding-x-70--xs g-margin-b-20--xs">Final Submit</button></a>
+                        <a href="https://www.dropbox.com/request/sonFfkqroovO91I3t6ff" target="_blank"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50 g-padding-x-70--xs g-margin-b-20--xs">Final Submit</button></a>
                     </span>
 
 
@@ -231,7 +228,7 @@
 
 
                 <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Confirm Your Arrival</h2>
-                  <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Last date to confirm your journey to VNIT Nagpur is <b>28th Feb 2019</b></p>
+                  <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Last date to confirm your journey to VNIT Nagpur is <b>13th February 2020.</b></p>
                       <style>
                           @media(min-width: 1024px) {
                                   form {
