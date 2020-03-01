@@ -64,43 +64,38 @@
             class="g-padding-y-100--lg g-padding-y-60--sm g-padding-y-80--md  g-padding-y-40--xs">
             <div style="background: #bd2026ad;"
                 class="g-padding-x-100--lg g-padding-x-60--md g-padding-x-40--sm g-padding-x-20--xs g-text-center--xs g-padding-y-40--xs">
-                <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white g-letter-spacing--1">
-                    Dashboard</h1>
+                <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white g-letter-spacing--1">Your Dashboard</h1>
 
                 <div id="round1"
                     class="g-padding-x-100--md g-padding-x-120--lg g-padding-y-30--xs g-padding-x-40 g-padding-x-15--xs">
                     {{# if session.round3}}
-                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Congratulations on
-                        qualifying for the final round of StartUp Conclave</p>
+                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome back to the competition!</p>
                     <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
                             class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}</span></h3>
                     <p
                         class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                        Round 3 is the pitching round wherein you have to pitch your startup in front of our esteemed
-                        investor panel. (Details about the investors will be emailed to you, soon.)</p>
-
+                        A pre-pitching round has been scheduled for you on 05<sup>th</sup> March 2020.<br/> For more details, contact:<br/>Yash: +91 76208 72471<br/>Nandita: +91 93594 58871</p>
 
                     <p
                         class=" g-font-size-22--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
                         <b>{{session.confirm}}</b></p>
 
                     <br>
-                    <span class="g-display-block--xs g-display-inline-block--sm">
-                        <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a> -->
+                    <!-- <span class="g-display-block--xs g-display-inline-block--sm">
+                        <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a>
                         <a id="round3_button"><button type="submit"
-                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed
-                                to Round 3<span class="ti-arrow-right"></span></button></a>
-                    </span>
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Know More<span class="ti-arrow-right">Know More</span></button></a>
+                    </span> -->
 
-                    <span class="g-display-block--xs g-display-inline-block--sm">
+                    <!-- <span class="g-display-block--xs g-display-inline-block--sm">
                         <a id="round3_button"
                             href="https://docs.google.com/document/d/1TCar9a3FCTvShE-lqri1Ytco3g4vSOnSjUxnqO4JnkM/edit?usp=sharing"><button
                                 class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your
                                 Accomodation details <span class="ti-arrow-right"></span></button></a>
-                    </span>
-                    <div id="myModal" class="modal fade" role="dialog">
+                    </span> -->
+                    <!-- <div id="myModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
-                            <!-- Modal content-->
+                            Modal content
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -116,37 +111,34 @@
                             </div>
 
                         </div>
-                    </div>
-                    {{ else if session.round2}}
-                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Not Selected in
-                        round 3. Better luck next time!</p>
+                    </div> -->
+                    {{# else if session.round1}}
+                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome to the wild card entry of the competition!</p>
+                    <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
+                            class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
 
-                    <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
-                            class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}</span></h3>
-
-                    <p
-                        class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                        <b>We wish you best of luck for your future endeavours.</b>
-                        <b>The pitching of the teams of VNIT is being rescheduled. If you're from VNIT, you'll be
-                            contacted soon.</b>
+                    <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
+                        Details of the round will be released on 2<sup>nd March 2020.
                     </p>
-                    <!-- <p class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">Round 2 is our Business Model Round. In this round, you have to create an executive summary showcasing the future course of action of the startup. <br>
-                              Also, you have to upload a video of your elevator pitch which will be of maximum <b>three minute duration</b>.</p> -->
+                    <!-- <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>13<sup>th</sup> January 2020.</b></p> -->
+                    <br/>
+                    <!-- <span class="g-display-block--xs g-display-inline-block--sm">
+                        <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a>
 
-                    <br>
-                    <span class="g-display-block--xs g-display-inline-block--sm">
-                        <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a> -->
-                        <!-- <a id="round2_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Proceed to Round 2  <span class="ti-arrow-right"></span></button></a> -->
-                    </span>
-                    {{else}}
-                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">We regret to inform
-                        you that you aren't selected for round 2.</p>
+                        <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ"
+                            target="_blank"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
+                                Resources</button></a>
+                    </span> -->
+
+                    {{# else}}
+                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Thank You for participating in StartUp Conclave'20.</p>
                     <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
                             class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
 
                     <p
                         class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                        We wish you good luck for your startup! See you at the next edition of StartUp Conclave!
+                        We wish you good luck for your start-up!
                     </p>
                     <!-- <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>13<sup>th</sup> January 2020.</b></p> -->
                     <br>
@@ -158,7 +150,6 @@
                                 class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
                                 Resources</button></a>
                     </span>
-
                     {{/if}}
                     <br>
                 </div>
