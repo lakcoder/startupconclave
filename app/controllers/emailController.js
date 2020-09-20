@@ -95,7 +95,7 @@ exports.htmlemail = function (req, res) {
     console.log(subject);
 
 
-    if(pass == "Entrepreneurs2020"){
+    if(pass == "Entrepreneurs2000"){
         const fileRows = [];
 
       // open uploaded file
@@ -140,7 +140,7 @@ exports.sendemail = function (req, res) {
     console.log(subject);
 
 
-    if(pass == "Entrepreneurs2020"){
+    if(pass == "Entrepreneurs2000"){
 
         htmlMail(email, subject, html);
         console.log("Mail Sent");
