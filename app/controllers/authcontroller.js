@@ -29,7 +29,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1//04bGltCzvXA1FCgYIARAAGAQSNwF-L9IrLISdUSuWiloke5TLMxA0jPyrkBlzbtODnTUcYsGayJh1XQ439_MiTbnYeSMMTfJHvrw"
+     refresh_token: "1//04b7KeWrpIE2zCgYIARAAGAQSNwF-L9IrylN_3AasYsHchEh0iRcT9o5nU9hAe_i3YTvJAL_hWP5svM93lcbrdv-X0p5i3ZQ6ImM"
 });
 
 const accessToken = oauth2Client.refreshAccessToken().then(function(res){
@@ -47,7 +47,7 @@ var gMail = function(to,subject,template,context){
             user: "contact@ecellvnit.org",
             clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
             clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-            refreshToken: "1//04bGltCzvXA1FCgYIARAAGAQSNwF-L9IrLISdUSuWiloke5TLMxA0jPyrkBlzbtODnTUcYsGayJh1XQ439_MiTbnYeSMMTfJHvrw",
+            refreshToken: "1//04b7KeWrpIE2zCgYIARAAGAQSNwF-L9IrylN_3AasYsHchEh0iRcT9o5nU9hAe_i3YTvJAL_hWP5svM93lcbrdv-X0p5i3ZQ6ImM",
             accessToken: accessToken
        }
   };
