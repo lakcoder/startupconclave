@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 {{> head }}
@@ -67,23 +68,27 @@
                 <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--white g-letter-spacing--1">
                     Your Dashboard</h1>
 
-                <div id="round1"
-                    class="g-padding-x-100--md g-padding-x-120--lg g-padding-y-30--xs g-padding-x-40 g-padding-x-15--xs">
+                {{!-- <div id="round1"
+                    class="g-padding-x-100--md g-padding-x-120--lg g-padding-y-30--xs g-padding-x-40 g-padding-x-15--xs"> --}}
                     {{# if session.round3}}
-                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome back to the
-                        competition!</p>
-                    <h3 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
-                            class="g-font-size-20--xs g-font-size-20--lg">{{session.teamname}}</span></h3>
-                    <p
-                        class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                        A pre-pitching round has been scheduled for you on 05<sup>th</sup> March 2020.<br /> For more
-                        details, contact:<br />Yash: +91 76208 72471<br />Nandita: +91 93594 58871</p>
+                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome to the 2nd
+                        round of the competition!</p>
+                    <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
+                            class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
 
-                    <p
-                        class=" g-font-size-22--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                        <b>{{session.confirm}}</b></p>
+                    <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available
+                        through the link below.<br>Deadline to submit the Executive Summary and Video Pitch is <b>18<sup>th</sup> February
+                            2021.</b></p>
+                    <br />
+                    <span class="g-display-block--xs g-display-inline-block--sm">
+                        <a id="round2_button"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Round 2</button></a>
 
-                    <br>
+                        <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ"
+                            target="_blank"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
+                                Resources</button></a>
+                    </span>
                     <!-- <span class="g-display-block--xs g-display-inline-block--sm">
                         <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Your Questionnaire</button></a>
                         <a id="round3_button"><button type="submit"
@@ -112,11 +117,65 @@
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
-
                         </div>
                     </div> -->
                     {{else}}
-                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome to the 1st
+                    <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Thank You for
+                        participating in StartUp Conclave'21.</p>
+                    <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
+                            class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
+                    <p
+                        class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
+                        We wish you good luck for your start-up!
+                    </p>
+                    <!-- <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>13<sup>th</sup> January 2020.</b></p> -->
+                    <br>
+                    <span class="g-display-block--xs g-display-inline-block--sm">
+                        <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a> -->
+                        <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ"
+                            target="_blank"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
+                                Resources</button></a>
+                    </span>
+                    {{!-- {{# if session.round2}}
+                         <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome to the 2nd
+                        round of the competition!</p>
+                    <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
+                            class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
+
+                    <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available
+                        through the link below.<br>Deadline to submit the questionnaire is <b>7<sup>th</sup> January
+                            2021.</b></p>
+                    <br />
+                    <span class="g-display-block--xs g-display-inline-block--sm">
+                        <a id="round2_button"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Round 2</button></a>
+
+                        <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ"
+                            target="_blank"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
+                                Resources</button></a>
+                    </span>
+                    {{else}}
+                     <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Thank You for
+                        participating in StartUp Conclave'20.</p>
+                    <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
+                            class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
+                    <p
+                        class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
+                        We wish you good luck for your start-up!
+                    </p>
+                    <!-- <p class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Learning resources are available through the link below.<br>Deadline to submit the questionnaire is <b>13<sup>th</sup> January 2020.</b></p> -->
+                    <br>
+                    <span class="g-display-block--xs g-display-inline-block--sm">
+                        <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a> -->
+                        <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ"
+                            target="_blank"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
+                                Resources</button></a>
+                    </span> --}}
+                    
+                    {{!-- <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Welcome to the 1st
                         round of the competition!</p>
                     <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
                             class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
@@ -133,13 +192,12 @@
                             target="_blank"><button type="submit"
                                 class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
                                 Resources</button></a>
-                    </span>
+                    </span> --}}
                     {{!-- {{# else}}
                     <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Thank You for
                         participating in StartUp Conclave'20.</p>
                     <h2 class="g-font-size-30--xs g-font-size-40--lg g-color--white g-margin-b-5--xs"><span
                             class="g-font-size-20--xs g-font-size-20--lg"><b>{{session.teamname}}</b></span></h2>
-
                     <p
                         class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
                         We wish you good luck for your start-up!
@@ -148,7 +206,6 @@
                     <br>
                     <span class="g-display-block--xs g-display-inline-block--sm">
                         <!-- <a id="ques_button"><button type="submit" class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-r-10--xs g-margin-l-10--xs g-margin-b-10--xs">Questionnaire</button></a> -->
-
                         <a href="https://drive.google.com/folderview?id=1ly0ad5bvcA4DKJlgApdRveILkyJyjTcZ"
                             target="_blank"><button type="submit"
                                 class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Learning
@@ -159,14 +216,14 @@
                     <br>
                 </div>
             </div>
-        </div>
+        {{!-- </div> --}}
         <div class="g-container--sm g-padding-y-80--xs g-padding-y-100--xs" id="round2"
             style="display: none; opacity: 0">
             <div id="rclose" style="text-align: center;cursor:pointer;"><i class="ti-close"></i></div>
             <div class="g-text-center--xs g-margin-b-20--xs">
                 <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Round 2</h2>
-                <h2 class="g-font-size-32--xs g-font-size-36--md g-color--red">The results of Round 2 will be out by 6th
-                    February 2020.</h2>
+                <h2 class="g-font-size-32--xs g-font-size-36--md g-color--red">The results of Round 2 will be out by 28th
+                    February 2021.</h2>
                 <div style="padding-top:7em;padding-bottom:7em;">
                     <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Your Elevator Pitch
                     </p><br />
@@ -181,35 +238,32 @@
                         <br /><br />Thank you for submitting your elevator pitch. If you wish to re-submit, drop an
                         email to <b>startupconclave@ecellvnit.org</b>
                     </p>
-                    <span class="g-display-block--xs g-display-inline-block--sm">
+                    {{!-- <span class="g-display-block--xs g-display-inline-block--sm">
                         <a href="#"><button type="submit"
-                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Round
-                                2 ends</button></a>
-                    </span>
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs"> Submit the</button></a>
+                    </span> --}}
                 </div>
                 <div>
                     <p class="g-font-size-30--xs g-font-size-30--md g-color--white g-margin-b-5--xs">Your Executive
                         Summary</p><br />
                     <span class="g-display-block--xs g-display-inline-block--sm">
-                        <a href="https://docs.google.com/document/d/1Qunz8jf3_Zz1hX8wVHE1nGdLGOZAL2DUgLvJ0_qoZPY/edit?usp=sharing"
+                        <a href="https://drive.google.com/file/d/1pSdtBQiOr2Ba6uYgBTrnyIkgXtZP5XN9/view?usp=sharing"
                             target="_blank"><button type="submit"
                                 class="text-uppercase s-btn s-btn--md s-btn--red-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">View
                                 Template</button></a>
                     </span>
                     <p
                         class=" g-font-size-18--xs g-color--white g-padding-y-20--lg g-padding-y-20--md g-padding-y-20--sm">
-                        The deadline to submit the Executive Summary is extended to <b>02<sup>nd</sup> February
-                            2020.</b>
+        
                         <br />You can take a reference from our <a
-                            href="https://docs.google.com/document/d/1Qunz8jf3_Zz1hX8wVHE1nGdLGOZAL2DUgLvJ0_qoZPY/edit?usp=sharing"
+                            href="https://drive.google.com/file/d/1pSdtBQiOr2Ba6uYgBTrnyIkgXtZP5XN9/view?usp=sharing"
                             target="_blank">Executive Summary Template</a>.
                         <br />Please submit your Executive Summary in <b>PDF format</b> only.
                         <br />The name of your document should be '<b>{{session.teamname}}_startupconclave.pdf</b>'.
                     </p>
                     <span class="g-display-block--xs g-display-inline-block--sm">
-                        <a href="#"><button type="submit"
-                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Round
-                                2 ends</button></a>
+                        <a href="https://bit.ly/3ihSX3o"><button type="submit"
+                                class="text-uppercase s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-10--xs">Submit Pitch and Executive Summary</button></a>
                     </span>
                 </div>
             </div>
@@ -713,7 +767,6 @@
     {{> footer}}
     {{> scripts }}
     <script type="text/javascript">
-
         $("#ques_button").click(function () {
             $("#Questionnaire").css({ "display": "block", "color": "white" });
             $("#Questionnaire").animate({ opacity: 1 }, 1000);
@@ -722,31 +775,22 @@
             var x = $("#Questionnaire").offset().top;
             $("html ,body").animate({ scrollTop: x }, 800);
         });
-
         $("#qclose").click(function () {
             $("#front").css({ "display": "block" });
             $("#front").animate({ opacity: 1 }, 1000);
-
             $("#Questionnaire").animate({ opacity: 0 }, 1000);
             $("#Questionnaire").css({ "display": "none" });
-
             var z = $("#login").offset().top;
             $("html ,body").animate({ scrollTop: z }, 200);
-
         });
-
         $("#round2_button").click(function () {
-
             $("#front").animate({ opacity: 0 }, 100);
             $("#front").css({ "display": "none" });
             $("#round2").css({ "display": "block" });
             $("#round2").animate({ opacity: 1 }, 100);
             var y = $("#round2").offset().top;
             $("html ,body").animate({ scrollTop: y }, 800);
-
         });
-
-
         $("#rclose").click(function () {
             $("#round2").css({ "display": "none" });
             $("#round2").animate({ opacity: 0 }, 100);
@@ -754,10 +798,7 @@
             $("#front").animate({ opacity: 1 }, 1000);
             var q = $("#login").offset().top;
             $("html ,body").animate({ scrollTop: q }, 200);
-
         });
-
-
         $("#round3_button").click(function () {
             $("#front").animate({ opacity: 0 }, 1000);
             $("#front").css({ "display": "none" });
@@ -765,36 +806,27 @@
             $("#round3").animate({ opacity: 1 }, 1000);
             var a = $("#round3").offset().top;
             $("html ,body").animate({ scrollTop: a }, 800);
-
-
         });
         $("#r3close").click(function () {
-
             $("#front").css({ "display": "block" });
             $("#front").animate({ opacity: 1 }, 1000);
             $("#round3").css({ "display": "none" });
             $("#round3").animate({ opacity: 0 }, 100);
-
             var b = $("#login").offset().top;
             $("html ,body").animate({ scrollTop: b }, 200);
-
         });
-
     </script>
 
     <script>
         if (localStorage.getItem('popState') != 'shown') {
-
             localStorage.setItem('popState', 'shown');
-
             $(window).load(function () {
                 $('#myModal').modal('show');
             });
-
         }
     </script>
 
 </body>
 <!-- End Body -->
 
-</html>
+</ht
