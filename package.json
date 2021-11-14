@@ -4,7 +4,8 @@
   "description": "Author: E-Cell VNIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -31,5 +32,15 @@
     "passport-local": "^1.0.0",
     "request": "^2.88.0",
     "sequelize": "^4.44.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asachkahitari/startupconclave.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/asachkahitari/startupconclave/issues"
+  },
+  "homepage": "https://github.com/asachkahitari/startupconclave#readme"
 }
