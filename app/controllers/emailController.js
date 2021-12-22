@@ -18,7 +18,8 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-     refresh_token: "1//04G1YHofhe33WCgYIARAAGAQSNwF-L9IrTnCppHxH1CKPuotWt4w0t4QmFC2KaIx4lmUVrLqbnAgDLL-i4Ge2Q7Jln6N0JQfELFk"
+
+     refresh_token: "1//048zkipMXXt7oCgYIARAAGAQSNwF-L9IrgcP2-LO-nLfb_3Cj7Jc0tecTklKiRygdBmwgH--uVNWtticIm0r3cQoOeoC0IMT-cXA"
 });
 // const accessToken = oauth2Client.getAccessToken()
 
@@ -37,7 +38,8 @@ var htmlMail = function(to,subject, html){
               user: "contact@ecellvnit.org",
               clientId: "584428439259-msra4crq1dc1dcp3mn3fnd9l3hpr9t55.apps.googleusercontent.com",
               clientSecret: "TiP_wiXYihI4tJP6VUCh3NuB",
-              refreshToken: "1//04G1YHofhe33WCgYIARAAGAQSNwF-L9IrTnCppHxH1CKPuotWt4w0t4QmFC2KaIx4lmUVrLqbnAgDLL-i4Ge2Q7Jln6N0JQfELFk",
+
+              refreshToken: "1//048zkipMXXt7oCgYIARAAGAQSNwF-L9IrgcP2-LO-nLfb_3Cj7Jc0tecTklKiRygdBmwgH--uVNWtticIm0r3cQoOeoC0IMT-cXA",
               accessToken: accessToken
          }
     };
@@ -140,8 +142,10 @@ exports.sendemail = function (req, res) {
     console.log(subject);
 
 
+
     if(pass == "21Cont@ct22") /*this password was earlier Entrepreneurs2020 for bulk mail*/
     {
+
 
         htmlMail(email, subject, html);
         console.log("Mail Sent");
